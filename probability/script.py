@@ -9,7 +9,9 @@ bikes = pandas.read_csv("bike_rental_day.csv")
 days = len(bikes['cnt'])
 days_over_5k =len([elem for elem in bikes['cnt'] if elem > 5000])
 prob_over_5000 = days_over_5k/days
-print(days, days_more_5k, prob_over_5000)
+print("days", days)
+print("days_over_5k", days_over_5k)
+print("prob_over_5000", prob_over_5000)
 
 
 #compute a distribution of the probability of 0 days with over 5000 to 30 days over 5000 
@@ -32,8 +34,6 @@ for elem in outcome_counts:
     p=prob_over_5000
     q=1-p
     outcome_probs= [get_combinations_probability(30, i, .39, .61) for i in outcome_counts]
-    
-print( outcome_probs)
 
 
 #plot the distribution
